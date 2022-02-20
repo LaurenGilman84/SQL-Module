@@ -11,7 +11,6 @@ USE course_sales;
 CREATE TABLE organisation (
     organisation_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     organisation_name VARCHAR(50) NOT NULL,
-    key_contact_id INT NOT NULL,
     places_purchased INT,
     places_used INT
 );
@@ -24,7 +23,6 @@ CREATE TABLE member (
     member_email VARCHAR(100) NOT NULL,
     parent_organisation_id INT NOT NULL,
     admin_permissions BIT DEFAULT 0,
-    courses_enrolled INT,
     enrollment_date DATE,
     line_manager_id INT,
     direct_reports INT,
