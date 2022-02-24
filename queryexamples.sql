@@ -51,4 +51,11 @@ SELECT  member.member_name, results.module_id, module.module_name, results.stude
 FROM relationships, results, module, member
 WHERE relationships.line_manager_id = 6 AND relationships.member_rel_id = results.student_id AND results.student_module_score IS NOT NULL AND module.module_id = results.module_id AND member.member_id = results.student_id;
 
+/*Using Transaction and rollback*/
 
+Select * FROM organisation;
+START TRANSACTION;
+DELETE FROM organisation WHERE organisation_id = 3;
+SELECT * FROM organisation;
+ROLLBACK;
+Select * FROM organisation;
